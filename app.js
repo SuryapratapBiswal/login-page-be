@@ -15,9 +15,8 @@ const PORT = process.env.PORT || 8080;
 dotenv.config()
 
 
-const USERNAME = process.env.DB_USERNAME;
-const PASSWORD = process.env.DB_PASSWORD;
-Connection(USERNAME, PASSWORD)
+
+Connection();
 
 app.listen(PORT, () => {
     console.log(`server is listing to ${PORT}`)
