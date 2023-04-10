@@ -35,7 +35,7 @@ export const userLogin = async (req, res) => {
         return res.json({ error: "User Not found" });
     }
     if (await bcrypt.compare(password, user.password)) {
-        const token = Jwt.sign({ email: user.email }, process.env.JWT_SECRET, {
+        const token = Jwt.sign({ email: user.email },"hvdvay6ert72839289()aiyg8t87qt72393293883uhefiuh78ttq3ifi78272jbkj?[]]pou89ywe", {
             expiresIn: "2h"
         })
         if (res.status(201)) {
@@ -50,7 +50,7 @@ export const userLogin = async (req, res) => {
 export const getAllUser = async (req, res) => {
     const token  = req.headers.authorization.split(" ")[1];
     try {
-        const user = Jwt.verify(token, process.env.JWT_SECRET, (err, res) => {
+        const user = Jwt.verify(token,"hvdvay6ert72839289()aiyg8t87qt72393293883uhefiuh78ttq3ifi78272jbkj?[]]pou89ywe", (err, res) => {
             if (err) {
                 return "token expired";
             }
